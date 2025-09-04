@@ -1,0 +1,19 @@
+/* Color Theme Swatches in RGBA */
+:root {
+    --verde_escuro: rgba(61, 62, 46, 1);
+    --verde: rgba(70, 111, 41, 1);
+    --bege: rgba(191, 146, 104, 1);
+    --marrom: rgba(55, 37, 23, 1);
+    --marrom_escuro: rgba(55, 31, 21, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 20px dashed var(--verde);
+    background-color: var(--bege);
+}
