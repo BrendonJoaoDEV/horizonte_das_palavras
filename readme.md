@@ -1,3 +1,15 @@
+# Horizonte das Palavras
+
+Um sistema de controle de aluguel de livros para uma biblioteca, construído com o objetivo de testar e aprimorar os conhecimentos adquiridos em sala de aula sobre HTML5, CSS3, JavaScript, PHP e MySQL.
+
+### Desenvolvedores
+
+- Ágata Quadros (@AgataQuadros)
+- Augusto José (@augustojosemagalhaesmattos)
+- Brendon João (@BrendonJoaoDEV)
+- Gilber Mattos (@Gilber-Mattos-Mendes)
+
+### Fluxo do sistema:
 - 1 - Iniciar o sistema
 - 2 - Exibir:
     - 2.1 - Clientes
@@ -36,8 +48,23 @@
         - 4.2.5 - Excluir livro
         - 4.2.6 - Fim (retornar ao menu)
     - 4.3 - Receber livro
-    - 4.3.1
+        - 4.3.1 - Selecionar o livro sendo devolvido
+        - 4.3.2 - Mudar o estado do aluguel daquele livro com aquele cliente
+        - 4.3.3 - Adicionar livro de volta aos disponiveis
+        - 4.3.4 - Fim (retornar ao menu)
     - 4.4 - Alterar cliente
+        - 4.4.1 - Selecionar o cliente
+        - 4.4.2 - Coletar os novos dados
+        - 4.4.3 - Substituir os dados
+        - 4.4.4 - Fim (retornar ao menu)
     - 4.5 - Alterar livro
+        - 4.5.1 - Selecionar o cliente
+        - 4.5.2 - Coletar os novos dados
+        - 4.5.3 - Substituir os dados
+        - 4.5.4 - Fim (retornar ao menu)
     - 4.6 - Alterar alugados
+        - 4.6.1 - Selecionar o aluguel
+        - 4.6.2 - Coletar os novos dados
+        - 4.6.3 - Substituir os dados
+        - 4.6.4 - Fim (retornar ao menu)
 - 5 - Fim
