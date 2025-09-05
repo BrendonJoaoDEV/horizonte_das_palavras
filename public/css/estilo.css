@@ -2,9 +2,11 @@
 :root {
     --verde_escuro: rgba(61, 62, 46, 1);
     --verde: rgba(70, 111, 41, 1);
-    --bege: rgba(191, 146, 104, 1);
+    --verde_claro: rgb(119, 139, 104);
+    --marrom_claro: rgba(191, 146, 104, 1);
     --marrom: rgba(55, 37, 23, 1);
     --marrom_escuro: rgba(55, 31, 21, 1);
+    --bege: rgb(231, 193, 157);
 }
 
 * {
@@ -12,8 +14,82 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border: 20px dashed var(--verde);
     background-color: var(--bege);
+}
+
+main {
+    border: 15px dashed var(--verde_claro);
+}
+
+h2 {
+    color: var(--marrom);
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+li, ul {
+
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.4rem;
+    color: darkblue;
+    padding: 2px;
+}
+
+input {
+    font-size: 18px;
+    text-align: center;
+    height: 45px;
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    color: var(--verde_claro);
+    background-color: var(--verde_escuro);
+}
+
+input::placeholder {
+    color: var(--verde_claro);
+}
+
+input:focus {
+    outline: none;
+    border: 2px dashed var(--verde_claro);
+}
+
+input:hover {
+    border: 2px dashed var(--verde_claro);
+}
+
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.principal {
+    background-image: url(../img/download.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    font-size: 50px;
+    color: var(--bege);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
