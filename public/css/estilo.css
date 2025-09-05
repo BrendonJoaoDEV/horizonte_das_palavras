@@ -42,8 +42,17 @@ li, ul {
     font-weight: 400;
     font-style: normal;
     font-size: 1.4rem;
-    color: darkblue;
+    color: var(--marrom_escuro);
     padding: 2px;
+}
+
+a {
+    color: var(--marrom);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--bege);
 }
 
 input {
@@ -74,10 +83,27 @@ input:hover {
 
 
 button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
     padding: 5px 10px;
     margin: 5px;
     border-radius: 5px;
+    border: 2px solid var(--marrom);
+    color: var(--marrom);
+    background-color: var(--marrom_claro);
 }
+
+
+button:hover{
+    font-size: 17px;
+    padding: 6px 11px;
+    margin: 6px;
+    border-radius: 5px;
+    border: 2px dotted var(--bege);
+    color: var(--bege);
+    background-color: var(--marrom);
+}
+
 
 .principal {
     background-image: url(../img/download.png);
