@@ -22,6 +22,7 @@ body {
 
 main {
     border: 15px dashed var(--verde_claro);
+    box-sizing: border-box;
 }
 
 h2 {
@@ -84,7 +85,7 @@ input:hover {
 
 button {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     padding: 5px 10px;
     margin: 5px;
     border-radius: 5px;
@@ -95,9 +96,7 @@ button {
 
 
 button:hover{
-    font-size: 17px;
-    padding: 6px 11px;
-    margin: 6px;
+    transform: scale(1.1);
     border-radius: 5px;
     border: 2px dotted var(--bege);
     color: var(--bege);
@@ -113,9 +112,24 @@ button:hover{
     object-fit: cover;
     overflow: hidden;
     width: 100%;
-    height: 600px;
+    height: 500px;
     display: flex;
     font-size: 50px;
     color: var(--bege);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login input {
+    font-size: 35px;
+    height: 60px;
+    width: 800px;
+    padding: 5px;
+    margin: 10px;
 }
