@@ -2,12 +2,32 @@
 
 Um sistema de controle de aluguel de livros para uma biblioteca, construído com o objetivo de testar e aprimorar os conhecimentos adquiridos em sala de aula sobre HTML5, CSS3, JavaScript, PHP e MySQL.
 
-### Desenvolvedores
+### Desenvolvedores:
 
 - Ágata Quadros (@AgataQuadros)
 - Augusto José (@augustojosemagalhaesmattos)
 - Brendon João (@BrendonJoaoDEV)
 - Gilber Mattos (@Gilber-Mattos-Mendes)
+
+### Requisitos funcionais:
+
+- RF[001] - Login: Ao entrar o sistema deve apresentar uma tela de login, exigindo do usuário nome e senha. (Por esse sistema ser para fins didáticos essa tela é simbólica, ou seja, exige os dados mas não os valida nem salva em lugar algum)
+- RF[002] - Criação: Criação de clientes, livros e alugueis, exigindo e validando os dados respectivos de cada opção.
+- RF[003] - Leitura: Exibir resultados coerentes sobre as tabelas clientes, livros e alugueis.
+- RF[004] - Alteração: Permitir alteração de dados em clientes, livros e alugueis, de forma válida e sem a criação de novos registros.
+- RF[005] - Exclusão: "Excluir" dados de clientes e de livros, por questões de segurança os dados são mantidos porém são inativados (clientes) ou fica com o estoque zerado (livros).
+- RF[006] - Validações: 
+    - Validar campos de entrada (RF[002] e RF[004]),
+    - Garantir que a exclusão seja válida (cliente não tenha alugueis pendentes),
+    - Validação de operações no banco de dados (exibir mensagem de erro caso a resposta do banco não seja a esperada).
+- RF[007] - Opções: O sistema deve dar ao usuário para todos os processos, as opções de escolher entre clientes, livros ou alugueis de forma fácil e intuitiva.
+
+### Requisitos não funcionais:
+
+- RNF[001] - Estrutura do projeto: O projeto deve apresentar uma estrutura modularizada e moderna com separação clara de front-end e back-end.
+- RNF[002] - Banco de dados relacional: O banco de dados do projeto deve ser um banco de dados relacional para permitir relação entre dados, saídas mais completas e maior escalabilidade.
+- RNF[003] - Fluxo do sistema: O sistema deve se manter no fluxo esperado (descrito no <a href="/docs/fluxograma.drawio.png">fluxograma</a>) e evitar ao máximo quebras do sistema com validações.
+
 
 ### Fluxo do sistema:
 - 1 - Iniciar o sistema
@@ -18,18 +38,18 @@ Um sistema de controle de aluguel de livros para uma biblioteca, construído com
 - 3 - Opções:
     - 3.1 - Cadastrar cliente
         - 3.1.1 - Pedir dados do cliente
-        - 3.1.2 - Validar (se validas prosseguir, se não pedir novamente)
+        - 3.1.2 - Validar (se válidas prosseguir, se não pedir novamente)
         - 3.1.3 - Adicionar ao banco de dados
         - 3.1.4 - Fim (retornar ao menu)
     - 3.2 - Cadastrar livro
         - 3.2.1 - Pedir dados do livro
-        - 3.2.2 - Validar (se validas prosseguir, se não pedir novamente)
+        - 3.2.2 - Validar (se válidas prosseguir, se não pedir novamente)
         - 3.2.3 - Adicionar ao banco de dados
         - 3.2.4 - Fim (retornar ao menu)
     - 3.3 - Alugar livro
         - 3.3.1 - Pedir os dados do aluguel
         - 3.3.2 - Verificar se o livro está disponível (se sim prosseguir, se não pedir outro livro)
-        - 3.3.3 - Validar demais informações (se validas prosseguir, se não pedir novamente)
+        - 3.3.3 - Validar demais informações (se válidas prosseguir, se não pedir novamente)
         - 3.3.4 - Adicionar ao banco de dados
         - 3.3.5 - Fim (retornar ao menu)
 - 4 - Quando houver dados cadastrados:
@@ -43,7 +63,7 @@ Um sistema de controle de aluguel de livros para uma biblioteca, construído com
     - 4.2 - Excluir livro
         - 4.2.1 - Selecionar livro
         - 4.2.2 - Encontrar livro no banco de dados
-        - 4.2.3 - Verificar se o livro não esta emprestado (se tiver alugado não permitir exclusão, se não tiver alugado prosseguir)
+        - 4.2.3 - Verificar se o livro não está emprestado (se tiver alugado não permitir exclusão, se não tiver alugado prosseguir)
         - 4.2.4 - Confirmar se é o livro correto (se sim prosseguir, se não cancelar)
         - 4.2.5 - Excluir livro
         - 4.2.6 - Fim (retornar ao menu)
@@ -58,7 +78,7 @@ Um sistema de controle de aluguel de livros para uma biblioteca, construído com
         - 4.4.3 - Substituir os dados
         - 4.4.4 - Fim (retornar ao menu)
     - 4.5 - Alterar livro
-        - 4.5.1 - Selecionar o cliente
+        - 4.5.1 - Selecionar o livro
         - 4.5.2 - Coletar os novos dados
         - 4.5.3 - Substituir os dados
         - 4.5.4 - Fim (retornar ao menu)
