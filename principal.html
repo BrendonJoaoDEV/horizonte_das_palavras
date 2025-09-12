@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horizonte das Palavras</title>
     <link rel="stylesheet" href="public/css/estilo.css">
 </head>
+
 <body>
 
     <header class="principal">
@@ -16,30 +18,37 @@
     </header>
 
     <main>
+        <form method="GET">
+            <input type="text" name="filtro" id="filtro" class="filtro"> <!-- value="<?= htmlspecialchars($busca) ?>" -->
+            <button type="submit" class="filtro">Pesquisar</button>
+            <!-- eu acho que o botão pode ser irrelevante pq eu quero que o input seja ativado por enter -->
+        </form>
 
-        <section>
+        <section class="lista-cliente">
 
             <article name="clientes-principal" id="clientes-principal">
-            <h2>Clientes</h2>
+                <h2>Clientes</h2>
 
-            <ul></ul>
+                <ul></ul>
             </article>
 
             <article name="livros-principal" id="livros-principal">
-            <h2>Livros</h2>
+                <h2>Livros</h2>
 
-            <ul></ul>
+                <ul></ul>
             </article>
 
             <article name="data" id="data">
-            <h2>Data</h2>
+                <h2>Data</h2>
 
-            <ul></ul>
+                <ul></ul>
             </article>
 
             <button><a href="editar.html">Editar</a></button>
             <button><a href="adicionar.html">+</a></button>
         </section>
     </main>
+    <script src="public/js/script.js"></script>
 </body>
+
 </html>
