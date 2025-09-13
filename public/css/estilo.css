@@ -141,3 +141,15 @@ button:hover{
     padding: 5px;
     margin: 10px;
 }
+
+/* definição das listas */
+
+.cad-cliente {
+    background-color: var(--verde);
+}
+.cad-livro {
+    background-color: var(--verde);
+}
+.cad-aluguel {
+    background-color: var(--verde);
+}
