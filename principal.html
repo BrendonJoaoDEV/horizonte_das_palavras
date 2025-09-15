@@ -19,33 +19,31 @@
 
     <main>
         <!-- <form method="GET"> -->
-            <!-- <input type="text" name="filtro" id="filtro" class="filtro"> value="<?= htmlspecialchars($busca) ?>" -->
-            <!-- <button type="submit" class="filtro">Pesquisar</button> -->
-            <!-- eu acho que o botão pode ser irrelevante pq eu quero que o input seja ativado por enter -->
+        <!-- <input type="text" name="filtro" id="filtro" class="filtro"> value="<?= htmlspecialchars($busca) ?>" -->
+        <!-- <button type="submit" class="filtro">Pesquisar</button> -->
+        <!-- eu acho que o botão pode ser irrelevante pq eu quero que o input seja ativado por enter -->
         <!-- </form> -->
 
         <section class="listaClientes">
 
-            <article name="clientes-principal" id="clientes-principal">
-                <h2>Clientes</h2>
+            <table>
 
-                <ul id="saida-clientes"></ul>
-            </article>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Livros</th>
+                        <th>Data de Devolução</th>
+                    </tr>
+                </thead>
 
-            <article name="livros-principal" id="livros-principal">
-                <h2>Livros</h2>
+                <tbody id="tabela-saida">
+                </tbody>
 
-                <ul id="saida-livros"></ul>
-            </article>
+            </table>
 
-            <article name="data" id="data">
-                <h2>Data</h2>
-
-                <ul id="saida-alugueis"></ul>
-            </article>
-
-            
         </section>
+
+
         <button><a href="editar.html">Editar</a></button>
         <button><a href="adicionar.html">+</a></button>
     </main>
