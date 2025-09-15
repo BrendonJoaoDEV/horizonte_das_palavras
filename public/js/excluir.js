@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("A exclusão foi cancelada.");
         }
     });
-});const excluir = document.getElementById('excluir')
+});
+
+const excluir = document.getElementById('excluir')
 
 excluir.addEventListener('click', function () {
 
