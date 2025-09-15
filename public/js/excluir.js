@@ -1,6 +1,6 @@
+const excluir = document.getElementById('excluir')
 
-
-function excluirCliente() {
+excluir.addEventListener('click', function () {
 
     const lista = document.getElementById("listaClientes");
     lista.innerHTML = "";
@@ -24,7 +24,7 @@ function excluirCliente() {
                     existe: c.existe == 1 ? 0 : 1
                 })
             });
-            excluirCliente();
+            
         };
             });
-}
+})
