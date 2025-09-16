@@ -13,10 +13,10 @@ $identificador = $conn->real_escape_string($json["opcao"]);
 // Verifica qual o identificador e gera a query SQL de acordo
 if ($identificador === "clientes") {
     $sql = "SELECT * FROM clientes ORDER BY ativo DESC, nome_cliente ASC";
-} elseif ($identificador === "livros") {
-    $sql = "SELECT * FROM livros ORDER BY nome_livro ASC";
-} elseif ($identificador === "alugueis") {
+} elseif ($identificador === "alugueis-resumo") {
     $sql = "SELECT nome_cliente, nome_livro, data_devolucao FROM alugados JOIN clientes ON alugados.id_cliente = clientes.id_cliente JOIN livros ON alugados.id_livro = livros.id_livro";
+} elseif ($identificador === "alugueis") {
+    $sql = "SELECT nome_cliente, nome_livro, data_aluguel, data_devolucao FROM alugados JOIN clientes ON alugados.id_cliente = clientes.id_cliente JOIN livros ON alugados.id_livro = livros.id_livro";
 } else {
     $sql = "Erro!";
 }
