@@ -10,7 +10,7 @@ form.addEventListener("submit", function(enviar) {
 
     if (usuario === "admin" && senha === "1234") {
         alert("Login realizado com sucesso!");
-        window.location.href = "principal.html"; 
+        window.location.href = "principal.php"; 
     } else {
         alert("Usuário ou senha incorretos!");
     }
