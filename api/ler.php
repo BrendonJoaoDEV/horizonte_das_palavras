@@ -16,7 +16,7 @@ if ($identificador === "clientes") {
 } elseif ($identificador === "livros") {
     $sql = "SELECT * FROM livros ORDER BY nome_livro ASC";
 } elseif ($identificador === "alugueis") {
-    $sql = "SELECT id_alugados, nome_cliente, cpf, nome_livro, codigo, data_aluguel, data_devolucao, situacao FROM alugados JOIN clientes ON alugados.id_cliente = clientes.id_cliente JOIN livros ON alugados.id_livro = livros.id_livro";
+    $sql = "SELECT nome_cliente, nome_livro, data_devolucao FROM alugados JOIN clientes ON alugados.id_cliente = clientes.id_cliente JOIN livros ON alugados.id_livro = livros.id_livro";
 } else {
     $sql = "Erro!";
 }
@@ -32,7 +32,7 @@ if ($sql != "Erro!") {
     }
 } else {
     // Se houver erro, envia a mensagem de erro
-    $saidas[] = "ERRO: Opção de leitura inválida!"
+    $saidas[] = "ERRO: Opção de leitura inválida!";
 }
 
 // Codifica a resposta e envia

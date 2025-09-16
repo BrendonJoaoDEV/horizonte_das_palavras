@@ -37,7 +37,8 @@ form {
     align-items: center;
 }
 
-li, ul {
+li,
+ul {
 
     font-family: "Playfair Display", serif;
     font-weight: 400;
@@ -100,7 +101,7 @@ button {
 }
 
 
-button:hover{
+button:hover {
     transform: scale(1.1);
     border-radius: 5px;
     border: 2px dotted var(--bege);
@@ -144,20 +145,39 @@ button:hover{
 
 /* definição das listas */
 
-.cad-cliente {
-    background-color: var(--verde);
-}
-.cad-livro {
-    background-color: var(--verde);
-}
-.cad-aluguel {
-    background-color: var(--verde);
+.cad-cliente input{
+    font-size: 25px;
+    height: 45px;
+    width: 400px;
+    padding: 5px;
+    margin: 10px;
 }
 
-.listaClientes {
+.cad-livro input{
+    font-size: 25px;
+    height: 45px;
+    width: 400px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.cad-aluguel input{
+    font-size: 25px;
+    height: 45px;
+    width: 400px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.lista {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 150px;
+}
+
+.botao {
+    display: flex;
     align-items: center;
-    gap: 100px;
+    justify-content: center;
 }
