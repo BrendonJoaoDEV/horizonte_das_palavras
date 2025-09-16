@@ -11,12 +11,14 @@ formCliente.addEventListener("submit", function(e) {
     const aniversario = document.getElementById("aniversario").value;
 
     // Validações básicas
-    if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) return alert("Nome inválido!");
-    if (!/^\d{10,11}$/.test(telefone)) return alert("Telefone inválido! Use somente números");
-    if (!/^\d{11}$/.test(cpf)) return alert("CPF inválido! Deve ter 11 dígitos");
-    if (!aniversario || new Date(aniversario) >= new Date()) return alert("Data de nascimento inválida!");
+    // if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) return alert("Nome inválido!");
+    // if (!/^\d{10,11}$/.test(telefone)) return alert("Telefone inválido! Use somente números");
+    // if (!/^\d{11}$/.test(cpf)) return alert("CPF inválido! Deve ter 11 dígitos");
+    // if (!aniversario || new Date(aniversario) >= new Date()) return alert("Data de nascimento inválida!");
 
     alert("Cadastro de cliente válido!");
+
+    enviar('./api/criar_cliente.php', {nome, telefone, cpf, aniversario});
 });
 
 // ====== Formulário Livro ======
@@ -29,11 +31,13 @@ formLivro.addEventListener("submit", function(e) {
     const codigo = document.getElementById("codigo").value.trim();
     const quantidade = document.getElementById("quantidade").value;
 
-    if (!nomeLivro) return alert("Nome do livro obrigatório!");
-    if (!codigo) return alert("Código obrigatório!");
-    if (quantidade < 1) return alert("Quantidade inválida!");
+    // if (!nomeLivro) return alert("Nome do livro obrigatório!");
+    // if (!codigo) return alert("Código obrigatório!");
+    // if (quantidade < 1) return alert("Quantidade inválida!");
 
     alert("Cadastro de livro válido!");
+
+    enviar('./api/criar_livro.php', {nomeLivro, codigo, quantidade});
 });
 
 // ====== Formulário Aluguel ======
@@ -52,4 +56,16 @@ formAluguel.addEventListener("submit", function(e) {
     if (dataDevolucao < dataAluguel) return alert("Data de devolução não pode ser antes do aluguel!");
 
     alert("Cadastro de aluguel válido!");
+
+    enviar('./api/criar_aluguel.php', {nomeCliente, nomeLivro, dataDevolucao})
 });
+
+async function enviar(local, dados) {
+    const resposta = await fetch(local, {
+        method: "POST",
+        body: JSON.stringify(dados)
+    });
+
+    const resultado = await resposta.json();
+    alert(resultado.mensagem);
+}

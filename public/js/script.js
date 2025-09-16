@@ -1,26 +1,41 @@
-document.addEventListener('DOMContentLoaded', async () => {
-    saidaClientes = document.getElementById('saida-clientes');
-    saidaLivros = document.getElementById('saida-livros');
-    saidaAlugueis = document.getElementById('saida-algueis');
+document.addEventListener('DOMContentLoaded', () => {
+    const tabela = document.getElementById('tabela-saida');
 
-    const listaClientes = await fetch("../api/ler.php", {
-        method: "POST",
-        body: JSON.stringify({
-            opcao: "clientes"
-        })
-    });
+    carregarTabela(tabela);
+})
 
-    const listaLivros = await fetch("../api/ler.php", {
-        method: "POST",
-        body: JSON.stringify({
-            opcao: "livros"
-        })
-    });
-
-    const listaAlugueis = await fetch("../api/ler.php", {
+async function carregarTabela(tabelaSaida) {
+    const resposta = await fetch("./api/ler.php", {
         method: "POST",
         body: JSON.stringify({
             opcao: "alugueis"
         })
     });
-})
+
+    const listaAlugueis = await resposta.json();
+
+    listaAlugueis.forEach(item => {
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+            <td>${item.nome_cliente}</td>
+            <td>${item.nome_livro}</td>
+            <td>${item.data_devolucao}</td>
+            <td></td>`;
+
+        const botaoEditar = document.createElement("button");
+        botaoEditar.textContent = "Editar";
+        botaoEditar.onclick = () => {
+            fetch('./api/atualizar_alugado.php', {
+                method: 'POST',
+                body: JSON.stringify(item) // envia o objeto inteiro como JSON
+            });
+            window.location.href = "editar.html";
+        }
+
+        // adiciona o botão à última célula
+        tr.children[3].appendChild(botaoEditar);
+
+        tabelaSaida.appendChild(tr);
+    });
+}
