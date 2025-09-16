@@ -23,9 +23,8 @@
         <!-- <button type="submit" class="filtro">Pesquisar</button> -->
         <!-- eu acho que o botão pode ser irrelevante pq eu quero que o input seja ativado por enter -->
         <!-- </form> -->
-        <button class="botao"><a href="adicionar.html">+</a></button>
 
-        <section class="lista">
+        <section class="listaClientes">
 
             <table>
 
@@ -45,8 +44,7 @@
         </section>
 
 
-        <button><a href="editar.html">Editar</a></button>
-
+        <button><a href="adicionar.html">+</a></button>
     </main>
     <script src="public/js/script.js"></script>
 </body>

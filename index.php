@@ -14,7 +14,7 @@
         <form action="POST">
             <input type="text" id="usuario" placeholder="Entre com o Usuario">
             <input type="password" id="senha" placeholder="Entre com a Senha">
-            <button><a href="principal.html">Entrar</a></button>
+            <button>Entrar</button>
         </form>
 
     </main>
