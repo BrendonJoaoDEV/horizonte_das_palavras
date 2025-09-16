@@ -8,7 +8,7 @@ async function carregarTabela(tabelaSaida) {
     const resposta = await fetch("./api/ler.php", {
         method: "POST",
         body: JSON.stringify({
-            opcao: "alugueis"
+            opcao: "alugueis-resumo"
         })
     });
 
