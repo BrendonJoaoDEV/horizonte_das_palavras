@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tabela = document.getElementById('tabela-saida');
 
-    carregarTabela(tabela);
+    carregarTabela(tabela, "alugueis-resumo");
 })
 
-async function carregarTabela(tabelaSaida) {
+async function carregarTabela(tabelaSaida, opcaoLeitura) {
     const resposta = await fetch("./api/ler.php", {
         method: "POST",
         body: JSON.stringify({
-            opcao: "alugueis-resumo"
+            opcao: `${opcaoLeitura}`
         })
     });
 
