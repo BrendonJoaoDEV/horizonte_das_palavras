@@ -30,7 +30,7 @@ async function carregarTabela(tabelaSaida) {
                 method: 'POST',
                 body: JSON.stringify(item) // envia o objeto inteiro como JSON
             });
-            window.location.href = "editar.php";
+            window.location.href = "editar.html";
         }
 
         // adiciona o botão à última célula
