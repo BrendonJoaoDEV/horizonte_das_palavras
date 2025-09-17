@@ -69,3 +69,8 @@ async function enviar(local, dados) {
     const resultado = await resposta.json();
     alert(resultado.mensagem);
 }
+
+const btnVoltar = document.getElementById("btnVoltar"); // Certifique-se de adicionar id="btnVoltar" no HTML
+btnVoltar.addEventListener("click", function() {
+    window.location.href = "principal.html"; // Redireciona para a página principal
+});
