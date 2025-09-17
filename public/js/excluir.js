@@ -40,5 +40,5 @@ excluir.addEventListener('click', function () {
             });
             
         };
-            });
+    });
 })
