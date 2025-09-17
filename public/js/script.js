@@ -39,3 +39,8 @@ async function carregarTabela(tabelaSaida, opcaoLeitura) {
         tabelaSaida.appendChild(tr);
     });
 }
+
+const btnVoltar = document.getElementById("btnVoltar"); // Certifique-se de adicionar id="btnVoltar" no HTML
+btnVoltar.addEventListener("click", function() {
+    window.location.href = "adicionar.html"; // Redireciona para a página principal
+});
