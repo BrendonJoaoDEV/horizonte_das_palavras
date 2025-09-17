@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function carregarClientes(tabelaSaida, opcaoLeitura) {
+    tabelaSaida.innerHTML = "";
     const resposta = await fetch("./api/ler.php", {
         method: "POST",
         body: JSON.stringify({
@@ -34,10 +35,27 @@ async function carregarClientes(tabelaSaida, opcaoLeitura) {
 
         // adiciona o botão à última célula
         tr.children[4].appendChild(botaoAtualizar);
-
+        
         const botaoExcluir = document.createElement("button");
-        botaoExcluir.textContent = "Excluir";
-        botaoExcluir.onclick = () => {
+        if (item.ativo == 0) {
+            botaoExcluir.textContent = "Desativar";
+        } else {
+            botaoExcluir.textContent = "Ativar";
+        }
+        botaoExcluir.onclick = async () => {
+            const confirmado = confirm("Tem certeza que deseja excluir?");
+            if (confirmado) {
+                await fetch("./api/excluir.php", {
+                    method: "POST",
+                    body: JSON.stringify({
+                    id: item.id_cliente,
+                    ativo: item.ativo == 1 ? 0 : 1})
+                }); 
+                carregarClientes(tabelaSaida, opcaoLeitura);
+                alert("Item excluído com sucesso!");
+            } else {
+                alert("A exclusão foi cancelada.");
+            }
         }
 
         // adiciona o botão à última célula
