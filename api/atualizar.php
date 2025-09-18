@@ -12,7 +12,7 @@ if (!$dados) {
 if (isset($dados['devolvido']) && isset($dados['id'])) {
     $id = (int)$dados['id'];
     $devolvido = (int)$dados['devolvido'];
-    $sql = "UPDATE alugados SET devolvido = $devolvido WHERE id_alugado = $id";
+    $sql = "UPDATE alugados SET data_devolucao = $devolvido WHERE id_alugado = $id";
 
 // 2) Atualizar clientes (detecta por 'id_cliente' e 'nome_cliente')
 } elseif (isset($dados['id_cliente']) && isset($dados['nome_cliente'])) {
