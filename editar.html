@@ -21,33 +21,48 @@
         <section class="tabela-edicoes">
 
             <article name="clientes-editar" id="clientes-editar">
-                <h2>Clientes</h2>
 
-                <ul></ul>
+                <table>
 
-                <button name="atualizar" id="atualizar">Atualizar</button>
-                <button name="alternar" id="alternar">Ativar/Desativar</button>
-                <button name="adicionar" id="adicionar">Adicionar</button>
-                
+                    <thead>
+                        <tr>
+                            <th>Nome Cliente</th>
+                            <th>Telefone</th>
+                            <th>CPF</th>
+                            <th>Data de Nascimento</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabela-clientes">
+                    </tbody>
+
+                </table>
             </article>
 
             <article name="livros-editar" id="livros-editar">
-                <h2>Livros</h2>
 
-                <ul></ul>
+                <table>
 
-                <button name="entregue" id="entregue">Entregue</button>
+                    <thead>
+                        <tr>
+                            <th>Nome Cliente</th>
+                            <th>Nome Livro</th>
+                            <th>Data Aluguel</th>
+                            <th>Data Devolução</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabela-alugueis">
+                    </tbody>
+
+                </table>
             </article>
 
-            <button><a href="principal.html">Voltar</a></button>
+            
+            <button class="botao" id="btnVoltar">Voltar</button>
         </section>
 
-            <script src="public/js/atualizar.js"></script>
-            <script src="public/js/excluir.js"></script>
-
-
+        <script src="public/js/editar.js"></script>
     </main>
-    <script src="public/js/script.js"></script>
 </body>
-
 </html>
