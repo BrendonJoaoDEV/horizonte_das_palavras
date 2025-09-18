@@ -88,3 +88,8 @@ Um sistema de controle de aluguel de livros para uma biblioteca, construído com
         - 4.6.3 - Substituir os dados
         - 4.6.4 - Fim (retornar ao menu)
 - 5 - Fim
+
+### Pendências:
+- BD - Retirar da tabela livro os campos codigo e quantidade_disponivel
+- Back-end (PHP) - Juntar arquivos e colocar decisão entre opções com condicionais
+- Front-end
