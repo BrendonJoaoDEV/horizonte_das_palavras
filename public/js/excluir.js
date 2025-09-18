@@ -10,35 +10,34 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("A exclusão foi cancelada.");
         }
     });
+
+    const btnexcluir = document.getElementById('excluir')
+
+    btnexcluir.addEventListener('click', function () {
+
+        const lista = document.getElementById("listaClientes");
+        lista.innerHTML = "";
+
+        clientes.array.forEach(c => {
+
+            const li = document.createElement("li");
+            li.textContent = c.ativo;
+
+            if (c.existe == 1) {
+                li.style.textDecoration = "line-througn";
+            }
+
+            btnexcluir.textContent = c.existe == 1 ? "Inativo" : "Ativo";
+            btnexcluir.onclick = async () => {
+                await fetch("../api/excluir.php", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        id: c.id,
+                        existe: c.existe == 1 ? 0 : 1
+                    })
+                });
+                
+            };
+                });
+    })
 });
-
-const excluir = document.getElementById('excluir')
-
-excluir.addEventListener('click', function () {
-
-    const lista = document.getElementById("listaClientes");
-    lista.innerHTML = "";
-
-    clientes.array.forEach(c => {
-
-        const li = document.createElement("li");
-        li.textContent = c.ativo;
-
-        if (c.existe == 1) {
-            li.style.textDecoration = "line-througn";
-        }
-
-        const btnDesativar = document.createElement("button");
-        btnDesativar.textContent = c.existe == 1 ? "Inativo" : "Ativo";
-        btnDesativar.onclick = async () => {
-            await fetch("../api/excluir.php", {
-                method: "POST",
-                body: JSON.stringify({
-                    id: c.id,
-                    existe: c.existe == 1 ? 0 : 1
-                })
-            });
-            
-        };
-    });
-})
