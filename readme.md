@@ -90,6 +90,11 @@ Um sistema de controle de aluguel de livros para uma biblioteca, construído com
 - 5 - Fim
 
 ### Pendências:
-- BD - Retirar da tabela livro os campos codigo e quantidade_disponivel
+- BD - Retirar da tabela livro os campos codigo e quantidade_disponivel, adicionar a tabela livros um campo 'disponivel'
 - Back-end (PHP) - Juntar arquivos e colocar decisão entre opções com condicionais
-- Front-end
+- Front-end (HTML e CSS) - Reformular e seguir novo design das páginas
+- excluir.php - Permitir que: 
+    - O estado do cliente seja alterado entre ativo e inativo
+    - O estado do livro seja alterado entre disponivel e indisponivel
+    - O estado do aluguel seja alterado entre recebido e pendente
+- atualizar.php - Permitir a atualização de todos os campos, de todas as tabelas
