@@ -137,7 +137,7 @@ input, button {
 /* definição do header */
 
 .principal {
-    background-image: url(../img/Sem\ título.png);
+    background-image: url(../img/paisagem.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -158,6 +158,14 @@ input, button {
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+
+.login input {
+    font-size: 35px;
+    height: 60px;
+    width: 800px;
+    padding: 5px;
+    margin: 10px;
 }
 
 
