@@ -3,21 +3,65 @@ document.addEventListener('DOMContentLoaded', () => {
     const formAluguel = document.getElementById("formAluguel");
     const formLivro = document.getElementById("formLivro");
     const formCliente = document.getElementById("formCliente");
+    const containerAluguel = document.getElementById('container-aluguel');
+    const containerLivro = document.getElementById('container-livro');
+    const containerCliente = document.getElementById('container-cliente');
+    const containerForms = document.getElementById('container-forms');
     const btnVoltar = document.getElementById("btnVoltar");
+
+    if (opcaoForm.value === '1') {
+        containerAluguel.classList = '';
+        containerLivro.classList = 'esconder';
+        containerCliente.classList = 'esconder';
+        containerForms.classList = 'lista-coluna';
+    } else if (opcaoForm.value === '2') {
+        containerAluguel.classList = 'esconder';
+        containerLivro.classList = '';
+        containerCliente.classList = 'esconder';
+        containerForms.classList = 'lista-coluna';
+    } else if (opcaoForm.value === '3') {
+        containerAluguel.classList = 'esconder';
+        containerLivro.classList = 'esconder';
+        containerCliente.classList = '';
+        containerForms.classList = 'lista-coluna';
+    } else if (opcaoForm.value === '4') {
+        containerAluguel.classList = '';
+        containerLivro.classList = '';
+        containerCliente.classList = 'esconder';
+        containerForms.classList = 'lista';
+    } else if (opcaoForm.value === '5') {
+        containerAluguel.classList = '';
+        containerLivro.classList = '';
+        containerCliente.classList = '';
+        containerForms.classList = 'lista';
+    }
 
     opcaoForm.addEventListener('input', () => {
         if (opcaoForm.value === '1') {
-            formAluguel.classList = '';
-            formLivro.classList = 'esconder';
-            formCliente.classList = 'esconder';
+            containerAluguel.classList = '';
+            containerLivro.classList = 'esconder';
+            containerCliente.classList = 'esconder';
+            containerForms.classList = 'lista-coluna';
         } else if (opcaoForm.value === '2') {
-            formAluguel.classList = 'esconder';
-            formLivro.classList = '';
-            formCliente.classList = 'esconder';
+            containerAluguel.classList = 'esconder';
+            containerLivro.classList = '';
+            containerCliente.classList = 'esconder';
+            containerForms.classList = 'lista-coluna';
         } else if (opcaoForm.value === '3') {
-            formAluguel.classList = 'esconder';
-            formLivro.classList = 'esconder';
-            formCliente.classList = '';
+            containerAluguel.classList = 'esconder';
+            containerLivro.classList = 'esconder';
+            containerCliente.classList = '';
+            containerForms.classList = 'lista-coluna';
+        } else if (opcaoForm.value === '4') {
+            containerAluguel.classList = '';
+            containerLivro.classList = '';
+            containerCliente.classList = 'esconder';
+            containerForms.classList = 'lista';
+        } else if (opcaoForm.value === '5') {
+            containerAluguel.classList = '';
+            containerLivro.classList = '';
+            containerCliente.classList = '';
+            containerForms.classList = 'lista';
         }
     });
 

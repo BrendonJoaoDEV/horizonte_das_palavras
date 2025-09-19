@@ -21,11 +21,13 @@
             <option value="1" default>Aluguel</option>
             <option value="2">Livro</option>
             <option value="3">Cliente</option>
+            <option value="4">Livro e Aluguel</option>
+            <option value="5">Todos</option>
         </select>
 
-        <section class="lista">
+        <section class="lista-coluna" id="container-forms">
             
-            <article class="cad-cliente">
+            <article id="container-cliente" class="cad-cliente">
                 <form id="formCliente" method="POST">
                     <h2>Cadastro de Cliente</h2>
 
@@ -44,7 +46,7 @@
                 </form>
             </article>
 
-            <article class="cad-livro">
+            <article id="container-livro" class="cad-livro">
                 <form id="formLivro" method="POST">
                     <h2>Cadastro de Livro</h2>
 
@@ -61,7 +63,7 @@
             </article>
 
 
-            <article class="cad-aluguel">
+            <article id="container-aluguel" class="cad-aluguel">
                 <form id="formAluguel" method="POST">
                     <h2>Cadastro de Aluguel</h2>
 

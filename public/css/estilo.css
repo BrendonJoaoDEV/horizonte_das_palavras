@@ -169,6 +169,13 @@ button:hover {
     margin: 10px;
 }
 
+.lista-coluna {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 150px;
+}
+
 .lista {
     display: flex;
     flex-direction: row;
