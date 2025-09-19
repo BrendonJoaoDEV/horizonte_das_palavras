@@ -1,8 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tabela = document.getElementById('tabela-saida');
+    const btnVoltar = document.getElementById("btnVoltar");
 
     carregarTabela(tabela, "alugueis-resumo");
-})
+
+    btnVoltar.addEventListener("click", function() {
+        window.location.href = "adicionar.php"; // Redireciona para a página principal
+    });
+});
 
 async function carregarTabela(tabelaSaida, opcaoLeitura) {
     const resposta = await fetch("./api/ler.php", {
@@ -39,8 +44,3 @@ async function carregarTabela(tabelaSaida, opcaoLeitura) {
         tabelaSaida.appendChild(tr);
     });
 }
-
-const btnVoltar = document.getElementById("btnVoltar"); // Certifique-se de adicionar id="btnVoltar" no HTML
-btnVoltar.addEventListener("click", function() {
-    window.location.href = "adicionar.html"; // Redireciona para a página principal
-});
