@@ -257,7 +257,7 @@ input, button {
 
 .lista th,
 .lista td {
-    width: calc(100% / 3); /* divide tabela em 3 colunas iguais */
+    width: calc(100% / 4); /* divide tabela em 3 colunas iguais */
     padding: 10px;
     text-align: center;
     word-wrap: break-word; /* quebra texto longo */
