@@ -31,6 +31,7 @@ async function carregarClientes(tabelaSaida, opcaoLeitura) {
         const botaoAtualizar = document.createElement("button");
         botaoAtualizar.textContent = "Atualizar";
         botaoAtualizar.onclick = () => {
+            
         }
 
         // adiciona o botão à última célula
@@ -66,6 +67,7 @@ async function carregarClientes(tabelaSaida, opcaoLeitura) {
 }
 
 async function carregarAlgueis(tabelaSaida, opcaoLeitura) {
+    tabelaSaida.innerHTML = "";
     const resposta = await fetch("./api/ler.php", {
         method: "POST",
         body: JSON.stringify({
@@ -88,8 +90,27 @@ async function carregarAlgueis(tabelaSaida, opcaoLeitura) {
             `;
 
         const botaoReceber = document.createElement("button");
-        botaoReceber.textContent = "Receber";
-        botaoReceber.onclick = () => {
+        if (item.situacao == 0) {
+            botaoReceber.textContent = "Pendente";
+        } else {
+            botaoReceber.textContent = "Recebido";
+        }
+        botaoReceber.onclick = async () => {
+            const confirmado = confirm("Tem certeza que deseja receber?");
+            if (confirmado) {
+                await fetch("./api/receber.php", {
+                        method: "POST",
+                        body: JSON.stringify({
+                            id: item.id_alugados,
+                            ativo: item.situacao == 1 ? 0 : 1
+                        })
+                    });
+                carregarAlgueis(tabelaSaida, opcaoLeitura);
+                alert("Item recebido com sucesso!");
+            } else {
+                alert("O recebimento foi cancelada.");
+            }
+            
         }
 
         // adiciona o botão à última célula
@@ -101,5 +122,5 @@ async function carregarAlgueis(tabelaSaida, opcaoLeitura) {
 
 const btnVoltar = document.getElementById("btnVoltar"); // Certifique-se de adicionar id="btnVoltar" no HTML
 btnVoltar.addEventListener("click", function() {
-    window.location.href = "principal.html"; // Redireciona para a página principal
+    window.location.href = "principal.php"; // Redireciona para a página principal
 });

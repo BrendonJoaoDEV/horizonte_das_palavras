@@ -31,11 +31,8 @@ async function carregarTabela(tabelaSaida, opcaoLeitura) {
         const botaoEditar = document.createElement("button");
         botaoEditar.textContent = "Editar";
         botaoEditar.onclick = () => {
-            fetch('./api/atualizar_alugado.php', {
-                method: 'POST',
-                body: JSON.stringify(item) // envia o objeto inteiro como JSON
-            });
-            window.location.href = "editar.html";
+            window.name = JSON.stringify(item);
+            window.location.href = "editar.php";
         }
 
         // adiciona o botão à última célula
