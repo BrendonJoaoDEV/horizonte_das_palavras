@@ -24,7 +24,10 @@
         <!-- eu acho que o botão pode ser irrelevante pq eu quero que o input seja ativado por enter -->
         <!-- </form> -->
 
-        <section class="listaClientes">
+        <button class="botao" id="btnVoltar">+</button>
+
+
+        <section class="lista">
 
             <table>
 
@@ -33,6 +36,7 @@
                         <th>Cliente</th>
                         <th>Livros</th>
                         <th>Data de Devolução</th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -43,8 +47,6 @@
 
         </section>
 
-
-        <button><a href="adicionar.html">+</a></button>
     </main>
     <script src="public/js/script.js"></script>
 </body>

@@ -26,7 +26,10 @@
 
                     <thead>
                         <tr>
-                            <th>Cliente</th>
+                            <th>Nome Cliente</th>
+                            <th>Telefone</th>
+                            <th>CPF</th>
+                            <th>Data de Nascimento</th>
                         </tr>
                     </thead>
 
@@ -34,10 +37,6 @@
                     </tbody>
 
                 </table>
-
-                <button name="atualizar" id="atualizar">Atualizar</button>
-                <button name="excluir" id="excluir">Excluir</button>
-                <button name="adicionar" id="adicionar">Adicionar</button>
             </article>
 
             <article name="livros-editar" id="livros-editar">
@@ -46,27 +45,24 @@
 
                     <thead>
                         <tr>
-                            <th>Livros</th>
+                            <th>Nome Cliente</th>
+                            <th>Nome Livro</th>
+                            <th>Data Aluguel</th>
+                            <th>Data Devolução</th>
                         </tr>
                     </thead>
 
-                    <tbody id="tabela-clientes">
+                    <tbody id="tabela-alugueis">
                     </tbody>
 
                 </table>
-
-                <button name="entregue" id="entregue">Entregue</button>
             </article>
 
-            <button><a href="principal.html">Voltar</a></button>
+            
+            <button class="botao" id="btnVoltar">Voltar</button>
         </section>
 
-        <script src="public/js/atualizar.js"></script>
-        <script src="public/js/excluir.js"></script>
-
-
+        <script src="public/js/editar.js"></script>
     </main>
-    <script src="public/js/script.js"></script>
 </body>
-
 </html>

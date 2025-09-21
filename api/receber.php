@@ -8,7 +8,7 @@ $id = (int)$dados["id"];
 $ativo = (int)$dados["ativo"];
 
 
-$sql = "UPDATE clientes SET ativo = $ativo WHERE id_cliente = '$id'";
+$sql = "UPDATE alugados SET situacao = $ativo WHERE id_cliente = '$id'";
 $conn->query($sql);
 
 // Retorna uma resposta JSON para o cliente indicando que a operação foi realizada com sucesso.
