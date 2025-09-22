@@ -18,7 +18,7 @@
     </header>
     <main>
 
-        <section class="lista">
+        <section class="lista-editar">
 
                 <table>
 
@@ -39,7 +39,7 @@
                 </table>
         </section>
 
-        <section class="lista">
+        <section class="lista-editar">
                 
                 <table>
                     

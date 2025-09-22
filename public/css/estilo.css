@@ -276,6 +276,40 @@ input, button {
     background: var(--verde_claro);
 }
 
+.lista-editar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lista-editar tr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.lista-editar table {
+    width: 80%;
+    height: auto;
+    table-layout: fixed; /* largura fixa das colunas */
+    border-collapse: collapse;
+}
+
+.lista-editar thead {
+    font-size: 20px;
+    color: var(--marrom_escuro);
+}
+
+.lista-editar tbody tr:nth-child(even) {
+    background: var(--marrom_claro);
+}
+
+.lista-editar tbody tr:hover {
+    background: var(--verde_claro);
+}
+
+
 /* ===================== */
 /* classe para esconder elementos */
 /* ===================== */
