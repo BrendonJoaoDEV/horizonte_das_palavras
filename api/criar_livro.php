@@ -9,11 +9,9 @@ $dados = json_decode(file_get_contents("php://input"), true);
 
 // Converte os dados do json pro tipo necessário
 $nome = $conn->real_escape_string($dados['nomeLivro']);
-$codigo = (int)$dados['codigo'];
-$quantidade = (int)$dados['quantidade'];
 
 // Gera a query de inserção desses dados
-$sql = "INSERT INTO livros (nome_livro, codigo, quantidade_disponivel) VALUES ('$nome', '$codigo', '$quantidade')";
+$sql = "INSERT INTO livros (nome_livro) VALUES ('$nome')";
 
 if ($conn->query($sql)) {
     echo json_encode(["status" => "ok", "mensagem" => "Livro cadastrado com sucesso!"]);

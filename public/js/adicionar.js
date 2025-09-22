@@ -14,26 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         containerLivro.classList = 'esconder';
         containerCliente.classList = 'esconder';
         containerForms.classList = 'lista-coluna';
-    } else if (opcaoForm.value === '2') {
-        containerAluguel.classList = 'esconder';
-        containerLivro.classList = '';
-        containerCliente.classList = 'esconder';
-        containerForms.classList = 'lista-coluna';
-    } else if (opcaoForm.value === '3') {
-        containerAluguel.classList = 'esconder';
-        containerLivro.classList = 'esconder';
-        containerCliente.classList = '';
-        containerForms.classList = 'lista-coluna';
-    } else if (opcaoForm.value === '4') {
-        containerAluguel.classList = '';
-        containerLivro.classList = '';
-        containerCliente.classList = 'esconder';
-        containerForms.classList = 'lista';
-    } else if (opcaoForm.value === '5') {
-        containerAluguel.classList = '';
-        containerLivro.classList = '';
-        containerCliente.classList = '';
-        containerForms.classList = 'lista';
     }
 
     opcaoForm.addEventListener('input', () => {
@@ -93,8 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         const nomeLivro = document.getElementById("nome-livro-cadastro").value.trim();
-        const codigo = document.getElementById("codigo").value.trim();
-        const quantidade = document.getElementById("quantidade").value;
 
         // if (!nomeLivro) return alert("Nome do livro obrigatório!");
         // if (!codigo) return alert("Código obrigatório!");
@@ -102,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         alert("Cadastro de livro válido!");
 
-        enviar('./api/criar_livro.php', {nomeLivro, codigo, quantidade});
+        enviar('./api/criar_livro.php', {nomeLivro});
     });
 
     formAluguel.addEventListener("submit", function(e) {

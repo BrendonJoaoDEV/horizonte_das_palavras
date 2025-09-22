@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `alugados` (
   `id_cliente` int(11) NOT NULL,
   `id_livro` int(11) NOT NULL,
   `data_aluguel` timestamp NOT NULL DEFAULT current_timestamp(),
-  `data_devolucao` varchar(100) DEFAULT NULL,
+  `data_devolucao` date NOT NULL,
   `situacao` tinyint(1) DEFAULT 0,
   PRIMARY KEY (`id_alugados`),
   KEY `id_cliente` (`id_cliente`),
@@ -66,8 +66,6 @@ CREATE TABLE IF NOT EXISTS `clientes` (
 CREATE TABLE IF NOT EXISTS `livros` (
   `id_livro` int(11) NOT NULL AUTO_INCREMENT,
   `nome_livro` varchar(100) NOT NULL,
-  `codigo` int(11) DEFAULT NULL,
-  `quantidade_disponivel` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_livro`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

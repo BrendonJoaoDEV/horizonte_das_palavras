@@ -31,7 +31,7 @@ async function carregarTabela(tabelaSaida, opcaoLeitura) {
         const botaoEditar = document.createElement("button");
         botaoEditar.textContent = "Editar";
         botaoEditar.onclick = () => {
-            window.name = JSON.stringify(item);
+            window.name = JSON.stringify(item.id_cliente);
             window.location.href = "editar.php";
         }
 

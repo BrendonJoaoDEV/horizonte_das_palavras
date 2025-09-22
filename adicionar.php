@@ -53,11 +53,6 @@
                     <label for="nome-livro-cadastro">Nome</label>
                     <input type="text" id="nome-livro-cadastro" name="nome-livro-cadastro">
 
-                    <label for="codigo">Código</label>
-                    <input type="text" id="codigo" name="codigo">
-
-                    <label for="quantidade">Quantidade</label>
-                    <input type="number" id="quantidade" name="quantidade">
                     <button type="submit">Cadastrar Livro</button>
                 </form>
             </article>
