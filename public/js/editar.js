@@ -43,7 +43,7 @@ async function carregarClientes(tabelaSaida, opcaoLeitura) {
             botaoExcluir.textContent = "Ativar";
         }
         botaoExcluir.onclick = async () => {
-            const confirmado = confirm("Tem certeza que deseja excluir?");
+            const confirmado = confirm("Tem certeza que deseja excluir? ");
             if (confirmado) {
                 await fetch("./api/excluir.php", {
                     method: "POST",

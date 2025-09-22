@@ -26,5 +26,5 @@ formCliente.addEventListener("submit", function(e) {
     hoje.setHours(0, 0, 0, 0); // zera as horas para comparar só a data
     if (dataNasc >= hoje) return alert("Data de nascimento inválida!");
 
-    alert("Cadastro de cliente válido!");
+    alert("Cadastro de cliente válida!");
 });
