@@ -206,6 +206,14 @@ input, button {
     height: 100vh;
 }
 
+.login input {
+    font-size: 35px;
+    height: 60px;
+    width: 800px;
+    padding: 5px;
+    margin: 10px;
+}
+
 /* ===================== */
 /* inputs das telas de cadastro */
 /* ===================== */
@@ -299,6 +307,12 @@ input, button {
 .lista-editar thead {
     font-size: 20px;
     color: var(--marrom_escuro);
+}
+
+.lista-editar tbody {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .lista-editar tbody tr:nth-child(even) {
