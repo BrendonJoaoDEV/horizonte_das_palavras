@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const cliente = await resposta.json();
 
-    console.log(cliente);
+    campoNome.value = cliente[0].nome_cliente;
+    campoTelefone.value = 
+
+    
 });
 
 

@@ -35,5 +35,7 @@
             </article>
         </section>
     </main>
+
+    <script src="public/js/atualizar.js"></script>
 </body>
 </html>
