@@ -18,9 +18,7 @@
     </header>
     <main>
 
-        <section class="tabela-edicoes">
-
-            <article name="clientes-editar" id="clientes-editar">
+        <section class="lista-editar">
 
                 <table>
 
@@ -30,6 +28,8 @@
                             <th>Telefone</th>
                             <th>CPF</th>
                             <th>Data de Nascimento</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
 
@@ -37,30 +37,28 @@
                     </tbody>
 
                 </table>
-            </article>
+        </section>
 
-            <article name="livros-editar" id="livros-editar">
-
+        <section class="lista-editar">
+                
                 <table>
-
+                    
                     <thead>
                         <tr>
-                            <th>Nome Cliente</th>
                             <th>Nome Livro</th>
                             <th>Data Aluguel</th>
                             <th>Data Devolução</th>
+                            <th></th>
                         </tr>
                     </thead>
-
+                    
                     <tbody id="tabela-alugueis">
                     </tbody>
-
-                </table>
-            </article>
-
+                    
+                </table>  
             
-            <button class="botao" id="btnVoltar">Voltar</button>
         </section>
+        <button class="botao" id="btnVoltar">Voltar</button>
 
         <script src="public/js/editar.js"></script>
     </main>

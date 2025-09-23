@@ -1,3 +1,7 @@
+/* ================== */
+/* definição de cores */
+/* ================== */
+
 :root {
     --verde_escuro: rgba(61, 62, 46, 1);
     --verde: rgba(70, 111, 41, 1);
@@ -9,17 +13,29 @@
     --bege_claro: rgb(250, 221, 193);
 }
 
+/* ====================== */
+/* definição padrão bordas */
+/* ====================== */
+
 :root {
     --borda-padrao: 2px solid var(--marrom);
     --borda-hover: 2px dotted var(--bege);
     --borda-input-focus: 2px dashed var(--verde_claro);
 }
 
+/* ===================== */
+/* reset de margem/padding */
+/* ===================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* ===================== */
+/* configuração geral da página */
+/* ===================== */
 
 html,
 body {
@@ -28,16 +44,29 @@ body {
     height: 100%;
 }
 
+/* ===================== */
+/* área principal da página */
+/* ===================== */
+
 main {
     border: 10px dashed var(--verde_claro);
     min-height: calc(100% - 500px);
+    /* ocupa toda a tela menos o header */
     box-sizing: border-box;
 }
+
+/* ===================== */
+/* títulos principais */
+/* ===================== */
 
 h2 {
     color: var(--marrom);
     text-align: center;
 }
+
+/* ===================== */
+/* formatação padrão para formulários */
+/* ===================== */
 
 form {
     display: flex;
@@ -46,9 +75,12 @@ form {
     align-items: center;
 }
 
+/* ===================== */
+/* listas gerais */
+/* ===================== */
+
 li,
 ul {
-
     font-family: "Playfair Display", serif;
     font-weight: 400;
     font-style: normal;
@@ -57,7 +89,9 @@ ul {
     padding: 2px;
 }
 
-/* definição padrão de link de tranferencia - a melhorar */
+/* ===================== */
+/* links padrão - hover a melhorar */
+/* ===================== */
 
 a {
     color: var(--marrom);
@@ -68,7 +102,9 @@ a:hover {
     color: var(--bege);
 }
 
+/* ===================== */
 /* definição padrão do input */
+/* ===================== */
 
 input {
     font-size: 18px;
@@ -96,7 +132,9 @@ input:hover {
     border: var(--borda-input-focus);
 }
 
-/* definição do botão */
+/* ===================== */
+/* definição padrão do botão */
+/* ===================== */
 
 button {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -109,7 +147,6 @@ button {
     background-color: var(--marrom_claro);
 }
 
-
 button:hover {
     transform: scale(1.1);
     border-radius: 5px;
@@ -118,11 +155,15 @@ button:hover {
     background-color: var(--marrom);
 }
 
+/* foco visível para acessibilidade */
+
 button:focus-visible,
 a:focus-visible {
     outline: 2px dashed var(--verde_claro);
     outline-offset: 4px;
 }
+
+/* centralização de botões */
 
 .botao {
     display: block;
@@ -130,11 +171,16 @@ a:focus-visible {
     text-align: center;
 }
 
-input, button {
+/* animação suave para input e botão */
+
+input,
+button {
     transition: all 0.2s ease-in-out;
 }
 
+/* ===================== */
 /* definição do header */
+/* ===================== */
 
 .principal {
     background-image: url(../img/paisagem.png);
@@ -146,12 +192,23 @@ input, button {
     width: 100%;
     height: 500px;
     display: flex;
-    font-size: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+.principal h1 {
+    text-align: center;
+    width: 1000px;
+    background-color: rgba(250, 221, 193, 0.4);
+    border-radius: 70px;
+    font-size: 150px;
     color: var(--bege_claro);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* ===================== */
 /* definição da tela de login */
+/* ===================== */
 
 .login {
     display: flex;
@@ -168,9 +225,9 @@ input, button {
     margin: 10px;
 }
 
-
-
-/* definição das listas */
+/* ===================== */
+/* inputs das telas de cadastro */
+/* ===================== */
 
 .cad-cliente input,
 .cad-livro input,
@@ -181,6 +238,21 @@ input, button {
     padding: 5px;
     margin: 10px;
 }
+
+/* ===================== */
+/* organização da lista em colunas */
+/* ===================== */
+
+.lista-coluna {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 150px;
+}
+
+/* ===================== */
+/* configuração da tabela */
+/* ===================== */
 
 .lista {
     display: flex;
@@ -198,12 +270,20 @@ input, button {
 .lista table {
     width: 80%;
     height: auto;
+    table-layout: fixed;
+    /* largura fixa das colunas */
+    border-collapse: collapse;
+    /* remove espaçamento entre células */
 }
 
 .lista th,
 .lista td {
+    width: calc(100% / 4);
+    /* divide tabela em 3 colunas iguais */
     padding: 10px;
     text-align: center;
+    word-wrap: break-word;
+    /* quebra texto longo */
 }
 
 .lista thead {
@@ -218,6 +298,62 @@ input, button {
 .lista tbody tr:hover {
     background: var(--verde_claro);
 }
+
+.lista-editar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    margin: auto;
+}
+
+.lista-editar tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.lista-editar table {
+    width: auto;
+    height: auto;
+    table-layout: fixed;
+    border-collapse: collapse;
+    display: flex;
+    flex-direction: row;
+}
+
+.lista-editar th,
+.lista-editar td {
+    width: calc(100% / 1);
+    padding: 10px;
+    text-align: center;
+}
+
+.lista-editar thead {
+    font-size: 20px;
+    color: var(--marrom_escuro);
+}
+
+.lista-editar tbody {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.lista-editar tbody tr:nth-child(even) {
+    background: var(--marrom_claro);
+}
+
+.lista-editar tbody tr:hover {
+    background: var(--verde_claro);
+}
+
+
+/* ===================== */
+/* classe para esconder elementos */
+/* ===================== */
 
 .esconder {
     display: none;

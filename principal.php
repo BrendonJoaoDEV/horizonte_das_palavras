@@ -36,6 +36,7 @@
                         <th>Cliente</th>
                         <th>Livros</th>
                         <th>Data de Devolução</th>
+                        <th></th>
                     </tr>
                 </thead>
 
