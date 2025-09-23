@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const formCliente = document.getElementById("formCliente");
-    const campoNome = document.getElementById("nome-cliente");
-    const campoTelefone = document.getElementById("telefone");
-    const campoCpf = document.getElementById("cpf");
-    const campoAniversario = document.getElementById("aniversario");
+    const formAtualizar = document.getElementById("formAtualizar");
+    const campoNome = document.getElementById("nome-editar");
+    const campoTelefone = document.getElementById("telefone-editar");
+    const campoCpf = document.getElementById("cpf-editar");
+    const campoAniversario = document.getElementById("aniversario-editar");
     const id = JSON.parse(window.name);
 
     const resposta = await fetch("./api/ler.php", {
@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 formCliente.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const nome = document.getElementById("nome-cliente").value.trim();
-    const telefone = document.getElementById("telefone").value.trim();
-    const cpf = document.getElementById("cpf").value.trim();
-    const aniversario = document.getElementById("aniversario").value;
+    const nome = document.getElementById("nome-editar").value.trim();
+    const telefone = document.getElementById("telefone-editar").value.trim();
+    const cpf = document.getElementById("cpf-editar").value.trim();
+    const aniversario = document.getElementById("aniversario-editar").value;
 
     // Valida se o nome contém apenas letras (com ou sem acento) e espaços
     if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) return alert("Nome inválido!");
