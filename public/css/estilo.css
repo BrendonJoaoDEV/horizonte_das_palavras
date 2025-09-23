@@ -20,7 +20,7 @@
 :root {
     --borda-padrao: 2px solid var(--marrom);
     --borda-hover: 2px dotted var(--bege);
-    --borda-input-focus: 2px dashed var(--verde_claro);
+    --borda-focus: 2px dashed var(--verde_claro);
 }
 
 /* ===================== */
@@ -115,11 +115,11 @@ input::placeholder {
 
 input:focus {
     outline: none;
-    border: var(--borda-input-focus);
+    border: var(--borda-focus);
 }
 
 input:hover {
-    border: var(--borda-input-focus);
+    border: var(--borda-focus);
 }
 
 /* ===================== */
@@ -148,7 +148,7 @@ button:hover {
 /* foco visível para acessibilidade */
 
 button:focus-visible{
-    outline: 2px dashed var(--verde_claro);
+    outline: var(--borda-focus);
     outline-offset: 4px;
 }
 
@@ -360,6 +360,37 @@ button {
     border: var(--borda-hover);
     color: var(--bege);
     background-color: var(--marrom);
+}
+
+
+/* ===================== */
+/* classe para formatar a pagina de atualizar cliente */
+/* ===================== */
+
+.atualizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.atualizar input{
+    font-size: 30px;
+    height: 60px;
+    width: 600px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.atualizar input:focus {
+    outline: none;
+    border:  4px dashed var(--verde_claro);
+}
+
+.atualizar input:hover {
+    border:  4px dashed var(--verde_claro);
 }
 
 
