@@ -1,5 +1,25 @@
-// Seleciona o formulário de cliente pelo id
-const formCliente = document.getElementById("formCliente");
+document.addEventListener('DOMContentLoaded', async () => {
+    const formCliente = document.getElementById("formCliente");
+    const campoNome = document.getElementById("nome-cliente");
+    const campoTelefone = document.getElementById("telefone");
+    const campoCpf = document.getElementById("cpf");
+    const campoAniversario = document.getElementById("aniversario");
+    const id = JSON.parse(window.name);
+
+    const resposta = await fetch("./api/ler.php", {
+        method: "POST",
+        body: JSON.stringify({
+            opcao: "cliente-especifico",
+            id: id
+        })
+    });
+
+    const cliente = await resposta.json();
+
+    console.log(cliente);
+});
+
+
 
 formCliente.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -25,6 +45,4 @@ formCliente.addEventListener("submit", function(e) {
     const hoje = new Date();
     hoje.setHours(0, 0, 0, 0); // zera as horas para comparar só a data
     if (dataNasc >= hoje) return alert("Data de nascimento inválida!");
-
-    alert("Cadastro de cliente válida!");
 });

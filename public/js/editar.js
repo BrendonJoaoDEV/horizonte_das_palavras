@@ -33,7 +33,8 @@ async function carregarTabelaLeituraEspecifica(tabelaSaida, opcaoLeitura, id) {
                 const botaoAtualizar = document.createElement("button");
                 botaoAtualizar.textContent = "Atualizar";
                 botaoAtualizar.onclick = () => {
-                    // Levar pro form de atualizar
+                    window.name = JSON.stringify(item.id_cliente);
+                    window.location.href = "atualizar.php";
                 }
 
                 tr.children[4].appendChild(botaoAtualizar);
