@@ -18,11 +18,10 @@
     </header>
 
     <main>
-        <!-- <form method="GET"> -->
-        <!-- <input type="text" name="filtro" id="filtro" class="filtro"> value="<?= htmlspecialchars($busca) ?>" -->
-        <!-- <button type="submit" class="filtro">Pesquisar</button> -->
+        <form method="GET">
+        <input type="text" name="filtro" id="filtro" class="filtro">
         <!-- eu acho que o botão pode ser irrelevante pq eu quero que o input seja ativado por enter -->
-        <!-- </form> -->
+        </form>
 
         <button class="botao" id="btnVoltar">+</button>
 

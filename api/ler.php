@@ -15,6 +15,12 @@ if (isset($json["id"])) {
     $id = 0;
 }
 
+if (isset($json["filtro"])) {
+    $filtro = $conn->real_escape_string($json["filtro"]);
+} else {
+    $filtro = "";
+}
+
 // Verifica qual o identificador e gera a query SQL de acordo
 if ($identificador === "clientes") {
     $sql = "SELECT * FROM clientes ORDER BY ativo ASC, nome_cliente ASC";
@@ -26,6 +32,8 @@ if ($identificador === "clientes") {
     $sql = "SELECT * FROM clientes WHERE id_cliente = '$id'";
 } elseif ($identificador === "alugueis-especificos") {
     $sql = "SELECT id_alugados, nome_livro, data_aluguel, data_devolucao, situacao FROM alugados JOIN clientes ON clientes.id_cliente = alugados.id_cliente JOIN livros ON livros.id_livro = alugados.id_livro WHERE clientes.id_cliente = '$id'";
+} elseif ($identificador === "filtro") {
+    $sql = "SELECT clientes.id_cliente, nome_cliente, nome_livro, data_devolucao FROM alugados JOIN clientes ON alugados.id_cliente = clientes.id_cliente JOIN livros ON alugados.id_livro = livros.id_livro WHERE nome_cliente LIKE '%$filtro%' OR nome_livro LIKE '%$filtro%'";
 } else {
     $sql = "Erro!";
 }

@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tabela = document.getElementById('tabela-saida');
     const btnVoltar = document.getElementById("btnVoltar");
+    const filtro = document.getElementById("filtro");
+
+    filtro.addEventListener('input', () => {
+        carregarTabela(tabela, "filtro", {opcao: "filtro", filtro: filtro.value});
+    });
 
     carregarTabela(tabela, "alugueis-resumo");
 
@@ -9,13 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-async function carregarTabela(tabelaSaida, opcaoLeitura) {
-    const resposta = await fetch("./api/ler.php", {
-        method: "POST",
-        body: JSON.stringify({
-            opcao: `${opcaoLeitura}`
-        })
-    });
+async function carregarTabela(tabelaSaida, opcaoLeitura, json=0) {
+    tabelaSaida.innerHTML = "";
+    let resposta = "";
+    if (json != 0) {
+        resposta = await fetch("./api/ler.php", {
+            method: "POST",
+            body: JSON.stringify(json)
+        });
+    } else {
+        resposta = await fetch("./api/ler.php", {
+            method: "POST",
+            body: JSON.stringify({
+                opcao: `${opcaoLeitura}`
+            })
+        });
+    }
 
     const listaAlugueis = await resposta.json();
 
