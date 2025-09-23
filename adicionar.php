@@ -17,7 +17,7 @@
     </header>
 
     <main>
-        <select id="opcao-formulario">
+        <select id="opcao-formulario" class="opcao-formulario">
             <option value="1" default>Aluguel</option>
             <option value="2">Livro</option>
             <option value="3">Cliente</option>

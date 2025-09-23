@@ -44,16 +44,6 @@ body {
     height: 100%;
 }
 
-/* ===================== */
-/* área principal da página */
-/* ===================== */
-
-main {
-    border: 10px dashed var(--verde_claro);
-    min-height: calc(100% - 500px);
-    /* ocupa toda a tela menos o header */
-    box-sizing: border-box;
-}
 
 /* ===================== */
 /* títulos principais */
@@ -140,7 +130,7 @@ button {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 17px;
     padding: 5px 10px;
-    margin: 5px;
+    margin: 10px;
     border-radius: 5px;
     border: var(--borda-padrao);
     color: var(--marrom);
@@ -157,8 +147,7 @@ button:hover {
 
 /* foco visível para acessibilidade */
 
-button:focus-visible,
-a:focus-visible {
+button:focus-visible{
     outline: 2px dashed var(--verde_claro);
     outline-offset: 4px;
 }
@@ -348,6 +337,29 @@ button {
 
 .lista-editar tbody tr:hover {
     background: var(--verde_claro);
+}
+
+
+/* ===================== */
+/* classe para formatar select */
+/* ===================== */
+
+.opcao-formulario {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: var(--borda-padrao);
+    color: var(--marrom);
+    background-color: var(--marrom_claro);
+}
+
+.opcao-formulario:focus-visible{
+    border-radius: 5px;
+    border: var(--borda-hover);
+    color: var(--bege);
+    background-color: var(--marrom);
 }
 
 
