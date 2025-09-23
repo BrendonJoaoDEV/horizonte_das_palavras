@@ -25,7 +25,7 @@ if ($identificador === "clientes") {
 } elseif ($identificador === "cliente-especifico") {
     $sql = "SELECT * FROM clientes WHERE id_cliente = '$id'";
 } elseif ($identificador === "alugueis-especificos") {
-    $sql = "SELECT id_alugado, nome_livro, data_aluguel, data_devolucao, situacao FROM alugados WHERE clientes.id_cliente = '$id' JOIN clientes WHERE clientes.id_cliente = alugados.id_cliente JOIN livros WHERE livros.id_livro = alugados.id_livro;";
+    $sql = "SELECT id_alugados, nome_livro, data_aluguel, data_devolucao, situacao FROM alugados JOIN clientes ON clientes.id_cliente = alugados.id_cliente JOIN livros ON livros.id_livro = alugados.id_livro WHERE clientes.id_cliente = '$id'";
 } else {
     $sql = "Erro!";
 }

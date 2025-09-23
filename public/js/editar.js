@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const id = JSON.parse(window.name);
 
         carregarTabelaLeituraEspecifica(tabelaCliente, "cliente-especifico", id);
-        // carregarTabelaLeituraEspecifica(tabelaAlugueis, "alugueis-especificos", id);
+        carregarTabelaLeituraEspecifica(tabelaAlugueis, "alugueis-especificos", id);
 });
 
 async function carregarTabelaLeituraEspecifica(tabelaSaida, opcaoLeitura, id) {
@@ -12,7 +12,8 @@ async function carregarTabelaLeituraEspecifica(tabelaSaida, opcaoLeitura, id) {
     const resposta = await fetch("./api/ler.php", {
         method: "POST",
         body: JSON.stringify({
-            opcao: `${opcaoLeitura}`
+            opcao: `${opcaoLeitura}`,
+            id: id
         })
     });
 
@@ -20,7 +21,6 @@ async function carregarTabelaLeituraEspecifica(tabelaSaida, opcaoLeitura, id) {
 
         if (opcaoLeitura === "cliente-especifico") {
             listaResultados.forEach(item => {
-                console.log(item);
                 const tr = document.createElement("tr");
                 tr.innerHTML = `
                 <td>${item.nome_cliente}</td>
@@ -66,7 +66,6 @@ async function carregarTabelaLeituraEspecifica(tabelaSaida, opcaoLeitura, id) {
             });
         } else if (opcaoLeitura === "alugueis-especificos") {
             listaResultados.forEach(item => {
-                console.log(item);
                 const tr = document.createElement("tr");
                 tr.innerHTML = `
                     <td>${item.nome_livro}</td>
