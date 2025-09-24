@@ -58,15 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const cpf = document.getElementById("cpf").value.trim();
         const aniversario = document.getElementById("aniversario").value;
 
-        // Validações básicas
-        // if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) return alert("Nome inválido!");
-        // if (!/^\d{10,11}$/.test(telefone)) return alert("Telefone inválido! Use somente números");
-        // if (!/^\d{11}$/.test(cpf)) return alert("CPF inválido! Deve ter 11 dígitos");
-        // if (!aniversario || new Date(aniversario) >= new Date()) return alert("Data de nascimento inválida!");
-
         alert("Cadastro de cliente válido!");
 
-        enviar('./api/criar_cliente.php', {nome, telefone, cpf, aniversario});
+        enviar('./api/criar.php', {opcao: "clientes", nome, telefone, cpf, aniversario});
     });
 
     formLivro.addEventListener("submit", function(e) {
@@ -74,13 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const nomeLivro = document.getElementById("nome-livro-cadastro").value.trim();
 
-        // if (!nomeLivro) return alert("Nome do livro obrigatório!");
-        // if (!codigo) return alert("Código obrigatório!");
-        // if (quantidade < 1) return alert("Quantidade inválida!");
-
         alert("Cadastro de livro válido!");
 
-        enviar('./api/criar_livro.php', {nomeLivro});
+        enviar('./api/criar.php', {opcao: "livros", nomeLivro});
     });
 
     formAluguel.addEventListener("submit", function(e) {
@@ -97,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         alert("Cadastro de aluguel válido!");
 
-        enviar('./api/criar_aluguel.php', {nomeCliente, nomeLivro, dataDevolucao})
+        enviar('./api/criar.php', {opcao: "alugueis", nomeCliente, nomeLivro, dataDevolucao})
     });
 });
 
