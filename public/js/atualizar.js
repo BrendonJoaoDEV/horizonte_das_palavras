@@ -29,22 +29,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const cpf = campoCpf.value.trim();
         const aniversario = campoAniversario.value;
     
-        // Valida se o nome contém apenas letras (com ou sem acento) e espaços
-        // if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) return alert("Nome inválido!");
-    
-        // Valida se o telefone tem apenas 10 ou 11 dígitos numéricos
-        // if (!/^\d{10,11}$/.test(telefone)) return alert("Telefone inválido! Use somente números");
-    
-        // Valida se o CPF tem exatamente 11 dígitos numéricos
-        // if (!/^\d{11}$/.test(cpf)) return alert("CPF inválido! Deve ter 11 dígitos");
-    
-        // Valida se a data de nascimento foi preenchida e é anterior à data atual
-        // if (!aniversario) return alert("Data de nascimento obrigatória!");
-        
-        // const dataNasc = new Date(aniversario);
-        // const hoje = new Date();
-        // hoje.setHours(0, 0, 0, 0); // zera as horas para comparar só a data
-        // if (dataNasc >= hoje) return alert("Data de nascimento inválida!");
 
         enviar('./api/atualizar.php', {id_cliente: id, nome_cliente: nome, telefone: telefone, cpf: cpf, data_nascimento: aniversario});
     });
