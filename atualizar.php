@@ -35,6 +35,9 @@
                 </form>
             </article>
         </section>
+
+            <button class="botao" id="btnVoltar">Voltar</button>
+
     </main>
 
     <script src="public/js/atualizar.js"></script>

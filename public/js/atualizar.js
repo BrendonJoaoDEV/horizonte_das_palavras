@@ -48,6 +48,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         enviar('./api/atualizar.php', {id_cliente: id, nome_cliente: nome, telefone: telefone, cpf: cpf, data_nascimento: aniversario});
     });
+
+    btnVoltar.addEventListener("click", function() {
+        window.location.href = "principal.php"; // Redireciona para a página principal
+    });
 });
 
 async function enviar(local, dados) {
